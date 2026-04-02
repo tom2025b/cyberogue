@@ -4,7 +4,7 @@ export function createPRNG(seed) {
   return {
     next() {
       s = (Math.imul(1664525, s) + 1013904223) >>> 0;
-      return s / 0xFFFFFFFF;
+      return s / 0x100000000;
     },
     nextInt(min, max) {
       return min + Math.floor(this.next() * (max - min + 1));
