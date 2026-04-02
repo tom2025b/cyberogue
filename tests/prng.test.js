@@ -49,7 +49,7 @@ describe('shuffle', () => {
     const rng = createPRNG(42);
     const arr = [1, 2, 3, 4, 5];
     const result = rng.shuffle(arr);
-    expect(result.sort()).toEqual([1, 2, 3, 4, 5]);
+    expect(result.sort((a, b) => a - b)).toEqual([1, 2, 3, 4, 5]);
   });
 
   it('does not mutate the input array', () => {
